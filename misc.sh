@@ -1,0 +1,33 @@
+#!/bin/bash
+
+BASH_LIBRARY_COMMONS=true
+
+# usage: killme <MESSAGE_TO_SHOW>
+# $1=message to show
+function killme() {
+	echo "$(color red bold)$(printDate) $*$(color)"
+	exit 1
+}
+
+# usage: is_pid_listed_in_ps <PID>
+# $1=PID
+function is_pid_listed_in_ps() {
+	ps -ax | sed -e 's/^[[:space:]]*//' | cut -d' ' -f1 | grep $1
+}
+
+# usage: is_keyword_listed_in_pgrep <KEYWORD>
+# $1=keyword
+function is_keyword_listed_in_pgrep() {
+	pgrep -f $1
+}
+
+# usage: get_os
+function get_os() {
+	if [ "$(uname)" == "Darwin" ]; then
+		echo "osx"
+	elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+		echo "linux"
+	elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+		echo "cygwin"
+	fi
+}
