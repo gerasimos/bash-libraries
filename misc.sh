@@ -31,3 +31,10 @@ function get_os() {
 		echo "cygwin"
 	fi
 }
+
+# $1 {BASH_SOURCE[0]}
+function file_folder() {
+	echo $( cd "$( dirname "$1" )" && pwd )
+}
+
+export -f file_folder
