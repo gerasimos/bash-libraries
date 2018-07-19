@@ -9,6 +9,12 @@ function lower() {
 	echo $* | awk '{print tolower($0)}'
 }
 
+# usage: string_remove_spaces <STRING>
+# $1 = input string
+function string_remove_spaces() {
+	$(echo -e "$1" | tr -d '[:space:]')
+}
+
 # usage: random_number_with_num_of_digits <NUMBER_OF_OUTPUT_DIGITS>
 # $1 = number of digits
 function random_number_with_num_of_digits() {
