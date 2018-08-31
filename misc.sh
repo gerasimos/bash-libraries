@@ -37,4 +37,14 @@ function file_folder() {
 	echo $( cd "$( dirname "$1" )" && pwd )
 }
 
+# $1=argument name
+# $2=variable
+function check_argument() {
+	if [ -z "$2" ]; then
+		echo "ERROR: $1 was not defined"
+		echo "$usage"
+		exit 1
+	fi
+}
+
 export -f file_folder
