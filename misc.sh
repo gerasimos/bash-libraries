@@ -42,7 +42,7 @@ function file_folder() {
 function check_argument() {
 	if [ -z "$2" ]; then
 		echo "ERROR: $1 was not defined"
-		echo "$usage"
+		echo "usage: $usage"
 		exit 1
 	fi
 }

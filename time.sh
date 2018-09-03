@@ -66,12 +66,13 @@ function countdown(){
 # usage: timestamp <FORMAT>
 # $1=format
 function timestamp() {
-  os=$(get_os)
-  if [ "$os" == "linux" ] || [ "$os" == "cygwin" ]; then
-    date "$*"
-  elif [ "$os" == "osx" ]; then
-    date -j "$*"
-  fi
+  # os=$(get_os)
+  # if [ "$os" == "linux" ] || [ "$os" == "cygwin" ]; then
+  #   date "$*"
+  # elif [ "$os" == "osx" ]; then
+  #   date -j "$*"
+  # fi
+  date "$*"
 }
 
 #####
