@@ -19,6 +19,15 @@ source $BASH_LIBRARIES_PATH/bash-libraries.sh
 
 ## Note for OSX
 
-Though bash-libraries targets cross-OS compatibility, there is currently one exception for OSX:
+In case you are using Mac OSX, make sure to [brew](https://brew.sh/) install:
 
-you need to `brew install gnu-sed` in order to keep bash-libraries as-is. Otherwise, you will need to alter all `sed -i ...` commands to `sed -i '' ...`
+```shell
+brew install gnu-sed --with-default-names
+brew install coreutils
+```
+
+and add the following line to `.bash_profile` or `.bashrc` or whatever file you define your `$PATH` in order to use the GNU utlis with their original name and not prefixed with a `g`:
+
+```shell
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+```
