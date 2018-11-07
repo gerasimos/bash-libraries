@@ -32,7 +32,7 @@ function get_os() {
 	fi
 }
 
-# $1 {BASH_SOURCE[0]}
+# $1 ${BASH_SOURCE[0]}
 function file_folder() {
 	echo $( cd "$( dirname "$1" )" && pwd )
 }
