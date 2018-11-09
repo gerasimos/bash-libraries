@@ -15,6 +15,12 @@ function is_pid_listed_in_ps() {
 	ps -ax | sed -e 's/^[[:space:]]*//' | cut -d' ' -f1 | grep $1
 }
 
+# Returns "yes" | "no"
+# $1=PID
+function is_pid_running() {
+	kill -0 $1 && echo "yes" || echo "yes"
+}
+
 # usage: is_keyword_listed_in_pgrep <KEYWORD>
 # $1=keyword
 function is_keyword_listed_in_pgrep() {
