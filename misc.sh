@@ -18,7 +18,7 @@ function is_pid_listed_in_ps() {
 # Returns "yes" | "no"
 # $1=PID
 function is_pid_running() {
-	kill -0 $1 && echo "yes" || echo "yes"
+	kill -0 $1 && echo "yes" || echo "no"
 }
 
 # usage: is_keyword_listed_in_pgrep <KEYWORD>
