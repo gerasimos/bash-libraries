@@ -48,7 +48,7 @@ function kvp_get_value() {
 # $3=value
 function kvp_set_value() {
 	if [ -f "$1" ]; then
-		sed -i "/$2=/d" $1
+		sed -i "/^$2=/d" $1
 	fi
 	echo "$2=$3" >> $1
 }
