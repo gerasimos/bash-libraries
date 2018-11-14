@@ -23,7 +23,7 @@ function random_number_with_num_of_digits() {
       env LC_CTYPE=C tr -dc "0-9" < /dev/urandom | head -c $1
     elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
       # Linux. Not tested
-      echo $((1 + RANDOM % 10^$1))
+      head /dev/urandom | tr -dc 0-9 | head -c $1
     elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
       # Windows. Not tested
       echo $((1 + RANDOM % 10^$1))
@@ -48,7 +48,7 @@ function kvp_get_value() {
 # $3=value
 function kvp_set_value() {
 	if [ -f "$1" ]; then
-    sed -i "/$2/d" $1
+		sed -i "/$2=/d" $1
 	fi
 	echo "$2=$3" >> $1
 }
