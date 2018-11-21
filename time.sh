@@ -77,7 +77,7 @@ function timestamp() {
 
 #####
 # tests
-function test() {
+function time_test() {
   # seconds_to_time
   println "\nseconds_to_time()"
   for s in 45 456 23445; do
@@ -92,7 +92,7 @@ function test() {
 
 if [ "$1" = "test" ]
 then
-  test
+  time_test
 fi
 
 export -f seconds_to_time

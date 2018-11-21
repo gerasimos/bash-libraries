@@ -27,12 +27,12 @@ function logwarn() {
 
 #####
 # tests
-function test() {
+function log_test() {
 	echo "$(printDate)"
 	echo "$(printTime)"
 }
 
 if [ "$1" = "test" ]
 then
-  test
+  log_test
 fi

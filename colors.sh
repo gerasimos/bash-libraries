@@ -70,7 +70,7 @@ function color() {
 	printf $l_prefix$l_color'm'
 }
 
-function test {
+function color_test {
 	printf "`color black`black\n"
 	printf "`color black bold`black bold\n"
 	printf "`color red`red\n"
@@ -95,7 +95,7 @@ function test {
 
 if [ "$1" = "test" ]
 then
-	test
+	color_test
 fi
 
 export -f color

@@ -55,7 +55,7 @@ function kvp_set_value() {
 
 #####
 # tests
-function test() {
+function strings_test() {
 	# lower
 	println "\nlower()"
 	lower "This will convert LOREM IPSUM to lowercase!"
@@ -83,7 +83,7 @@ function test() {
 
 if [ "$1" = "test" ]
 then
-	test
+	strings_test
 fi
 
 export -f lower
