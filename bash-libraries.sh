@@ -6,7 +6,9 @@ if [ -z "$BASH_LIBRARIES_PATH" ]; then
 fi
 
 source $BASH_LIBRARIES_PATH/colors.sh
+source $BASH_LIBRARIES_PATH/bl_colors.sh
 source $BASH_LIBRARIES_PATH/log.sh
+source $BASH_LIBRARIES_PATH/bl_log.sh
 source $BASH_LIBRARIES_PATH/strings.sh
 source $BASH_LIBRARIES_PATH/time.sh
 source $BASH_LIBRARIES_PATH/misc.sh
