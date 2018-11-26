@@ -14,15 +14,15 @@ function printTime() {
 
 function loginfo() {
 	# resets the color as well :)
-	echo "$(printDate) ${BASH_SOURCE[1]}:${FUNCNAME[1]} & $*$(color)"
+	echo "$(printDate) ${BASH_SOURCE[1]}:${FUNCNAME[1]} - $*$(color)"
 }
 
 function logerror() {
-	echo "$(color red)$(printDate) ${BASH_SOURCE[1]}:${FUNCNAME[1]} & ERROR: $*$(color)"
+	echo "$(color red)$(printDate) ${BASH_SOURCE[1]}:${FUNCNAME[1]} - ERROR: $*$(color)"
 }
 
 function logwarn() {
-	echo "$(color pine)$(printDate) ${BASH_SOURCE[1]}:${FUNCNAME[1]} & WARN: $*$(color)"
+	echo "$(color pine)$(printDate) ${BASH_SOURCE[1]}:${FUNCNAME[1]} - WARN: $*$(color)"
 }
 
 #####
