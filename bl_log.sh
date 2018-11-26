@@ -14,12 +14,12 @@ function bl::log::_time() {
 
 function bl::log::i() {
 	# resets the color as well :)
-	echo "$(bl::log::_date) ${BASH_SOURCE[1]}:${FUNCNAME[1]} & $*$(bl::col)"
+	echo "$(bl::col blk)$(bl::log::_date) ${BASH_SOURCE[1]}:${FUNCNAME[1]} & $*$(bl::col)"
 }
 
 function bl::log::w() {
 	# resets the color as well :)
-	echo "$(bl::col::pin)$(bl::log::_date) ${BASH_SOURCE[1]}:${FUNCNAME[1]} & WARN: $*$(bl::col)"
+	echo "$(bl::col pin)$(bl::log::_date) ${BASH_SOURCE[1]}:${FUNCNAME[1]} & WARN: $*$(bl::col)"
 }
 
 function bl::log::e() {
